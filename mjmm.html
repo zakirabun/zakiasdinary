@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaki Asdinary — Rekayasa Perangkat Lunak | Portofolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glow-effect {
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+        }
+        .transition-custom {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-500 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- Ambient Glow Background -->
+    <div class="fixed inset-0 pointer-events-none glow-effect z-0"></div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-extrabold text-lg tracking-tight hover:opacity-80 transition flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-pulse"></span>
+                <span>zaki<span class="text-indigo-600 dark:text-indigo-400">.</span>asdinary</span>
+            </a>
+
+            <div class="flex items-center gap-3 sm:gap-6">
+                <nav class="hidden sm:flex items-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-400">
+                    <a href="#tentang" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-custom">Tentang</a>
+                    <a href="#keahlian" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-custom">Keahlian</a>
+                    <a href="#proyek" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-custom">Proyek</a>
+                    <a href="#kontak" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-custom">Kontak</a>
+                </nav>
+
+                <!-- Tombol Mode Gelap / Terang -->
+                <button id="theme-toggle" class="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-200/80 dark:bg-slate-900 border border-slate-300/80 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-indigo-500 transition-custom flex items-center gap-2 text-xs font-semibold cursor-pointer" aria-label="Ubah Mode Tampilan">
+                    <span id="theme-text-light" class="hidden sm:block dark:hidden">Mode Gelap</span>
+                    <span id="theme-text-dark" class="hidden sm:dark:block">Mode Terang</span>
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block text-amber-400"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden text-indigo-600"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-4xl mx-auto px-6 py-12 md:py-20 flex-grow space-y-24">
+
+        <!-- Hero Section -->
+        <section class="space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-100/80 text-indigo-800 dark:bg-indigo-950/70 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/80 backdrop-blur-sm shadow-xs">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-400 animate-ping"></span>
+                <span>Siswa Kelas 11 RPL • SMKS Putra Anda Binjai</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                Membangun Solusi Perangkat Lunak & <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-500 dark:from-indigo-400 dark:via-violet-400 dark:to-indigo-300">Aplikasi Web Interaktif</span>.
+            </h1>
+            
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+                Halo! Saya <strong class="text-slate-900 dark:text-slate-100 font-bold">Zaki Asdinary</strong>, pelajar Rekayasa Perangkat Lunak yang antusias merancang sistem berbasis web yang fungsional, terstruktur rapi, serta berfokus pada kemudahan pengguna.
+            </p>
+
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#proyek" class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-custom shadow-lg shadow-indigo-500/25 flex items-center gap-2 group">
+                    <span>Lihat Proyek Unggulan</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
+                </a>
+                <a href="#kontak" class="px-6 py-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 hover:border-indigo-500 font-semibold text-sm transition-custom shadow-xs">
+                    Mari Berkolaborasi
+                </a>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 glass-panel space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">Kelas 11</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Jurusan Rekayasa Perangkat Lunak</div>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 glass-panel space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">1+</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Proyek Sistem Utama</div>
+            </div>
+            <div class="col-span-2 sm:col-span-1 p-5 rounded-2xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 glass-panel space-y-1">
+                <div class="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400">Multi-Role</div>
+                <div class="text-xs text-slate-500 dark:text-slate-400">Sistem Hak Akses Web</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="tentang" class="space-y-6">
+            <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+                <i data-lucide="user-check" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                <span>Tentang Perjalanan Saya</span>
+            </h2>
+            
+            <div class="p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 glass-panel space-y-5 text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                <p>
+                    Ketertarikan saya pada dunia pemrograman berawal dari rasa penasaran tentang bagaimana baris demi baris kode dapat diubah menjadi sistem interaktif yang digunakan oleh banyak orang. Hal ini mendorong saya untuk memilih jurusan <strong class="text-slate-900 dark:text-slate-100">Rekayasa Perangkat Lunak (RPL)</strong> di <strong class="text-slate-900 dark:text-slate-100">SMKS Putra Anda Binjai</strong>.
+                </p>
+                <p>
+                    Sebagai siswa kelas 11, saya secara aktif mendalami dasar-dasar pengembangan web modern (*front-end* dan *back-end*). Saya tidak hanya belajar menulis kode agar aplikasi berjalan, tetapi juga berusaha memahami bagaimana merancang alur logika yang efisien, membuat struktur basis data MySQL yang dinamis, serta menghadirkan pengalaman pengguna yang optimal.
+                </p>
+                <p>
+                    Bagi saya, pemrograman adalah proses pemecahan masalah secara kreatif. Setiap tantangan dan eror saat *coding* adalah kesempatan emas untuk belajar hal baru dan mengasah ketelitian berpikir sistematis.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Timeline Section -->
+        <section class="space-y-6">
+            <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+                <i data-lucide="graduation-cap" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                <span>Pendidikan & Sekolah</span>
+            </h2>
+            <div class="relative pl-6 sm:pl-8 border-l-2 border-indigo-500/30 space-y-8">
+                <div class="relative space-y-2">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-indigo-100 dark:ring-indigo-950"></div>
+                    <div class="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
+                        2024 — Sekarang
+                    </div>
+                    <h3 class="font-bold text-lg sm:text-xl text-slate-900 dark:text-slate-100">SMKS Putra Anda Binjai</h3>
+                    <p class="text-sm font-semibold text-indigo-600 dark:text-indigo-400">Jurusan Rekayasa Perangkat Lunak (RPL)</p>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Mempelajari dasar-dasar algoritma, perancangan basis data relasional MySQL, pengembangan web modern dengan JavaScript & Node.js, serta penerapan Version Control dengan Git & GitHub.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Filter -->
+        <section id="keahlian" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+                        <i data-lucide="code-2" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                        <span>Keahlian & Teknologi</span>
+                    </h2>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                        Daftar perangkat teknologi yang saya gunakan sehari-hari:
+                    </p>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterSkills('all')" class="skill-btn px-3.5 py-1.5 rounded-xl bg-indigo-600 text-white transition-custom cursor-pointer">Semua</button>
+                    <button onclick="filterSkills('frontend')" class="skill-btn px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition-custom cursor-pointer">Frontend</button>
+                    <button onclick="filterSkills('backend')" class="skill-btn px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition-custom cursor-pointer">Backend & DB</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="skills-container">
+                <div data-category="frontend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-orange-100 text-orange-600 dark:bg-orange-950/60 dark:text-orange-400"><i data-lucide="code" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">HTML5</div>
+                        <div class="text-xs text-slate-500">Struktur Web</div>
+                    </div>
+                </div>
+                <div data-category="frontend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-blue-100 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400"><i data-lucide="palette" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">CSS3 & Tailwind</div>
+                        <div class="text-xs text-slate-500">Desain Visual</div>
+                    </div>
+                </div>
+                <div data-category="frontend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-950/60 dark:text-amber-400"><i data-lucide="terminal" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">JavaScript (ES6+)</div>
+                        <div class="text-xs text-slate-500">Logika Interaktif</div>
+                    </div>
+                </div>
+                <div data-category="backend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400"><i data-lucide="server" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">Node.js / Express</div>
+                        <div class="text-xs text-slate-500">Backend System</div>
+                    </div>
+                </div>
+                <div data-category="backend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-cyan-100 text-cyan-600 dark:bg-cyan-950/60 dark:text-cyan-400"><i data-lucide="database" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">MySQL</div>
+                        <div class="text-xs text-slate-500">Manajemen Database</div>
+                    </div>
+                </div>
+                <div data-category="backend" class="skill-card p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 hover:border-indigo-500/50 transition-custom">
+                    <span class="p-2.5 rounded-xl bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300"><i data-lucide="git-branch" class="w-5 h-5"></i></span>
+                    <div>
+                        <div class="font-bold text-sm">Git & GitHub</div>
+                        <div class="text-xs text-slate-500">Version Control</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="proyek" class="space-y-6">
+            <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+                <i data-lucide="folder-git-2" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                <span>Proyek Unggulan</span>
+            </h2>
+
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Project Card: Aplikasi Ekskul -->
+                <div class="p-8 rounded-3xl bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800/80 glass-panel space-y-6 hover:border-indigo-500/50 transition-custom group">
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div class="p-3 rounded-2xl bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400 group-hover:scale-105 transition-transform">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold tracking-wider uppercase px-3.5 py-1 rounded-full bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">Sistem Web Sekolah</span>
+                            <button onclick="openModal()" class="px-3.5 py-1 rounded-full text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white transition-custom cursor-pointer flex items-center gap-1.5">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i> Detail Info
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-slate-100">
+                            Aplikasi Portal Informasi & Pendaftaran Ekstrakurikuler
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+                            Platform web interaktif yang dikembangkan untuk mendigitalisasi proses pendaftaran ekstrakurikuler sekolah secara online, mengelola jadwal kegiatan, serta menyediakan pusat galeri multimedia yang lengkap.
+                        </p>
+                    </div>
+
+                    <!-- Role Access Grid Preview -->
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200/80 dark:border-slate-800 space-y-3">
+                        <div class="text-xs font-bold text-slate-900 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-indigo-600"></i>
+                            Sistem Hak Akses Multi-Role:
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                            <div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                                <span class="font-bold text-indigo-600 dark:text-indigo-400 block mb-0.5">👨‍🎓 Siswa</span>
+                                <span class="text-slate-500">Daftar ekskul, baca informasi & jadwal.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                                <span class="font-bold text-purple-600 dark:text-purple-400 block mb-0.5">⚽ Pelatih</span>
+                                <span class="text-slate-500">Upload galeri Foto, Video & Musik ekskul.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                                <span class="font-bold text-emerald-600 dark:text-emerald-400 block mb-0.5">👨‍🏫 Admin / Guru</span>
+                                <span class="text-slate-500">Kelola data pendaftar & atur pengumuman.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Node.js</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">MySQL</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">JavaScript</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="kontak" class="space-y-6">
+            <h2 class="text-2xl font-bold tracking-tight flex items-center gap-3">
+                <i data-lucide="send" class="w-6 h-6 text-indigo-600 dark:text-indigo-400"></i>
+                <span>Mari Terhubung & Berdiskusi</span>
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+                Tertarik berdiskusi seputar web development, kolaborasi proyek, atau informasi seputar PKL/Magang? Kirimkan pesan atau hubungi langsung kontak di bawah ini.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <a href="mailto:zakiasdinaryhh@gmail.com" class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition-custom flex items-center gap-4 group shadow-xs">
+                    <div class="p-3.5 rounded-xl bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-semibold text-slate-500">Email Utama</div>
+                        <div class="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">zakiasdinaryhh@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="https://instagram.com/asdiary.space" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-indigo-500 transition-custom flex items-center gap-4 group shadow-xs">
+                    <div class="p-3.5 rounded-xl bg-pink-100 text-pink-600 dark:bg-pink-950/60 dark:text-pink-400 group-hover:scale-110 transition-transform">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-semibold text-slate-500">Instagram</div>
+                        <div class="font-bold text-sm sm:text-base text-slate-900 dark:text-slate-100">@asdiary.space</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Interactive Quick Message Form -->
+            <form onsubmit="handleContact(event)" class="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-4 shadow-sm">
+                <div class="font-bold text-sm">Kirim Pesan Cepat ke Zaki:</div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" required placeholder="Nama Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:outline-hidden focus:border-indigo-500">
+                    <input type="email" required placeholder="Email Anda" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:outline-hidden focus:border-indigo-500">
+                </div>
+                <textarea required rows="3" placeholder="Tulis pesan atau pertanyaan Anda di sini..." class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-sm focus:outline-hidden focus:border-indigo-500"></textarea>
+                <button type="submit" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm transition-custom cursor-pointer">
+                    Kirim Pesan Sekarang
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-slate-200 dark:border-slate-800/80 py-8 text-center text-xs text-slate-500">
+        <p>© 2026 Zaki Asdinary — Rekayasa Perangkat Lunak SMKS Putra Anda Binjai.</p>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 space-y-5 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 cursor-pointer">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div class="flex items-center gap-3">
+                <div class="p-3 rounded-2xl bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <div class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">Detail Proyek Sistem</div>
+                    <h3 class="font-extrabold text-xl text-slate-900 dark:text-slate-100">Aplikasi Portal Ekskul SMKS Putra Anda</h3>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                <p>
+                    Aplikasi ini dirancang sebagai solusi digital untuk mengatasi masalah pengelolaan data ekstrakurikuler sekolah. Dibangun menggunakan arsitektur relasional database MySQL dan teknologi JavaScript modern.
+                </p>
+                <div class="font-bold text-slate-900 dark:text-slate-200">Fitur Unggulan Multimedia & Hak Akses:</div>
+                <ul class="list-disc list-inside space-y-1">
+                    <li><strong>Siswa:</strong> Daftar ekskul secara online dan membaca pengumuman terbaru.</li>
+                    <li><strong>Pelatih:</strong> Mengunggah dokumentasi foto kegiatan, video latihan, dan berkas musik pendukung.</li>
+                    <li><strong>Guru & Admin:</strong> Mengelola seluruh database pendaftar, jadwal, dan memoderasi konten galeri.</li>
+                </ul>
+            </div>
+
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 font-semibold text-sm hover:opacity-80 transition-custom cursor-pointer">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 px-5 py-3 rounded-2xl bg-emerald-600 text-white font-semibold text-sm shadow-xl flex items-center gap-2.5 translate-y-24 opacity-0 transition-all duration-300">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span>Pesan berhasil dikirim! Terima kasih telah menghubungi Zaki.</span>
+    </div>
+
+    <!-- Script Utama -->
+    <script>
+        // Inisialisasi ikon Lucide
+        lucide.createIcons();
+
+        // 1. Logika Switch Mode Gelap / Terang
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        });
+
+        // 2. Filter Skills
+        function filterSkills(category) {
+            const cards = document.querySelectorAll('.skill-card');
+            const buttons = document.querySelectorAll('.skill-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-slate-900', 'border', 'border-slate-200', 'dark:border-slate-800');
+            });
+            event.target.classList.add('bg-indigo-600', 'text-white');
+            event.target.classList.remove('bg-white', 'dark:bg-slate-900', 'border');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 3. Modal Controls
+        const modal = document.getElementById('project-modal');
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 4. Handle Contact Form Submit & Toast
+        function handleContact(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            e.target.reset();
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
